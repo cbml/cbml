@@ -75,24 +75,38 @@ var esl;
 ## 现有定义代码块的问题
 
 + 不容易学习和记忆；
+
 > 是前缀还是后缀？是 `begin` 还是 `start`
+
+```
+<!-- 乐居广告脚本 begin-->
+/* jshint ignore:start */
+```
 + 是否存在闭合不明显；
-> `jshint ignore:begin` 要不要闭合？
+
+> `/*jshint unused:true, eqnull:true */` 要不要闭合？
+
 + 各语言间没有统一的解决方案。
+
 > C# 里用 `#region`，sourceMappingURL 用 `/*# sourceMappingURL=...*/`
 
 ## 代码块标记基本需求
 
 * 不影响开发期代码调试
+
 * 学习成本低
+
 * 支持各种主流代码文件
+
 * 扩展性高
+
 * 歧义小
 
 ## 思路
 
 XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如上各种基本需求。
-所以思路很简单：**将 XML 标记放到各种语言的多行注释里！**（机智）
+
+> 所以思路很简单：**将 XML 标记放到各种语言的多行注释里！**（机智）
 
 ## 代码块定义
 
@@ -102,9 +116,11 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 /*<tag attrs />*/
 
 /*<tag attrs>*/
+int i = 1024;
 /*</tag>*/
 
 /*<tag attrs>
+int i = 4096;
 </tag>*/
 ```
 
@@ -114,9 +130,11 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 '''<tag attrs />'''
 
 '''<tag attrs>'''
+i = 1024
 '''</tag>'''
 
 '''<tag attrs>
+i = 4096
 </tag>'''
 ```
 
@@ -126,9 +144,13 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 (*<tag attrs />*)
 
 (*<tag attrs>*)
+const
+    I: Integer = 1024;
 (*</tag>*)
 
 (*<tag attrs>
+const
+    I: Integer = 4096;
 </tag>*)
 ```
 
@@ -140,9 +162,11 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 <!--<tag attrs />-->
 
 <!--<tag attrs>-->
+<h1>1024</h1>
 <!--</tag>-->
 
 <!--<tag attrs>
+<h1>4096</h1>
 </tag>-->
 ```
 
@@ -152,9 +176,11 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 <!--tag attrs /-->
 
 <!--tag attrs-->
+<h1>1024</h1>
 <!--/tag-->
 
 <!--tag attrs>
+<h1>4096</h1>
 </tag-->
 ```
 
