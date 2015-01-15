@@ -100,24 +100,36 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 
 ```c
 /*<tag attrs />*/
+
 /*<tag attrs>*/
 /*</tag>*/
+
+/*<tag attrs>
+</tag>*/
 ```
 
 ### Python
 
 ```python
 '''<tag attrs />'''
+
 '''<tag attrs>'''
 '''</tag>'''
+
+'''<tag attrs>
+</tag>'''
 ```
 
 ### 类 Pascal 语言
 
 ```pascal
 (*<tag attrs />*)
+
 (*<tag attrs>*)
 (*</tag>*)
+
+(*<tag attrs>
+</tag>*)
 ```
 
 ### 类 XML 语言
@@ -126,16 +138,24 @@ XML 就已经是很好的标记语言了，基于 XML 扩展，就能满足如�
 
 ```xml
 <!--<tag attrs />-->
+
 <!--<tag attrs>-->
 <!--</tag>-->
+
+<!--<tag attrs>
+</tag>-->
 ```
 
 > 所以选择了这样：
 
 ```xml
 <!--tag attrs /-->
+
 <!--tag attrs-->
 <!--/tag-->
+
+<!--tag attrs>
+</tag-->
 ```
 
 ## 使用
@@ -155,13 +175,20 @@ if (arr.length < 2) {
     return;
 }
 /*</editor>*/
+
+/*<jdists encoding="aaencode">
+/*</jdists>*/
 ```
 
 ## 后续
 
 + CBML 全局 tag 注册
 + CBML 相关工具
++ 社区建设
++ 运营推广
++ 文档全球化
 
 ## 参考文献
 
++ [Extensible Markup Language (XML)](http://www.w3.org/XML/)
 + [#region (C# Reference)](http://msdn.microsoft.com/en-us//library/9a1ybwek.aspx)
