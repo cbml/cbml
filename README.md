@@ -52,7 +52,7 @@ console.log('hello'); // jshint ignore:line
 /*jshint unused:true, eqnull:true */
 ```
 
-```
+```js
 /* jshint ignore:start */
 var define;
 var require;
@@ -66,6 +66,20 @@ var esl;
 
 ```
 /*# sourceMappingURL=page.css.map */
+```
+
++ 表示需要引入其他资源
+
+> 如 wiredep
+
+```html
+<!-- bower:css -->
+<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+<!-- endbower -->
+
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
 ```
 
 **总之就是为了给一段代码添加额外的信息**
