@@ -213,6 +213,26 @@ list = {}
 </tag-->
 ```
 
+### 常规 Common 单行注释
+
+```c
+// <tag attrs />
+
+// <tag attrs>
+int i = 2;
+// </tag>
+```
+
+### 类 Shell 语言，单行注释
+
+```shell
+# <tag attrs />
+
+# <tag attrs>
+cp ~/software/app.zip ~/data/service/app.zip
+# </tag>
+```
+
 ## 使用
 
 只要 tag 不要冲突，代码块之间就能和平相处了
